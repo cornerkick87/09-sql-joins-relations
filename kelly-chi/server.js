@@ -33,7 +33,7 @@ app.get('/articles', (request, response) => {
   let SQL = `SELECT *
   FROM articles
   INNER JOIN authors
-  ON articles.author_id = authors.author_id;`
+  ON articles.author_id = authors.author_id;`;
   client.query(SQL)
     .then(result => {
       response.send(result.rows);
